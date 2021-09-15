@@ -1,0 +1,17 @@
+/* Color variables */
+$theme-colors: (
+    "primary": #263238,
+    "secondary": #0277bd,
+    "danger": #ff3a30,
+    "success": #34c759,
+    "light": #eceff1
+);
+
+/* Spacing */
+$enable-negative-margins: true;
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
+
+
+

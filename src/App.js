@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+} from "react-router-dom";
+import PrivateRoute from "./components/private-route";
+import PublicRoute from "./components/public-route";
+import Login from "./containers/auth/login";
+import Devices from "./containers/Devices";
+import * as authService from "./services/auth.service";
 
 function App() {
+
+  const isAuthenticated = authService.isAuthenticated();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Router>
+      <Switch>
+        <PublicRoute 
+          exact 
+          path={["/", "/login"]}
+          isAuthenticated={isAuthenticated}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Login />
+        </PublicRoute>
+        <PrivateRoute 
+          isAuthenticated={isAuthenticated}
+          path="/devices"
+        >
+          <Devices />
+        </PrivateRoute>
+      </Switch>
+    </Router>
   );
 }
 
 export default App;
+
