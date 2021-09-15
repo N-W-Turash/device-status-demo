@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import LoginForm from "./components/login-form";
 import "../../../stylesheets/login.scss";
-// import Loader from "../../components/loader";
-// import * as authApi from "../../../apis/auth-api";
 import * as authService from "../../../services/auth.service";
 
 const Login = () => {
@@ -13,14 +11,6 @@ const Login = () => {
 
   const [loading, setLoading] = useState(false);
   const [fieldError, setFieldError] = useState("");
-
-  /**
-  * Has effect on init
-  */
-  useEffect(() => {
-
-  }, []);
-
 
   const handleLogin = async (values) => {
     try {

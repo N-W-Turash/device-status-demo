@@ -19,16 +19,16 @@ export const getCurrentUser = () => {
 export function getAuthorizationHeader() {
     const accessToken = JSON.parse(localStorage.getItem("accessToken"));
 
-    if (accessToken) {
-        return { Authorization: 'Bearer ' + accessToken };
-    } else {
+    if (!accessToken || accessToken === null) {
         return {};
+    } else {
+        return { Authorization: 'Bearer ' + accessToken };
     }
 }
 
 export const isAuthenticated = () => {
-    const token = JSON.parse(localStorage.getItem("accessToken"));
-    if (!token || token === null) {
+    const accessToken = JSON.parse(localStorage.getItem("accessToken"));
+    if (!accessToken || accessToken === null) {
         return false;
     }
     return true;

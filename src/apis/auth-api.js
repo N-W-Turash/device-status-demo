@@ -1,8 +1,5 @@
 import { post } from "../helpers/api-helpers";
 
-/**
-* Update a specific post
-*/
 export const login = async (data) => {
     const config = {
         headers: {

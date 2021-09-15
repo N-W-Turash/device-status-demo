@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, Alert } from 'react-bootstrap';
 import Loader from "../../../../components/loader";
@@ -7,14 +6,6 @@ import { validationSchema, initialFormValues } from "../../../../forms/login";
 const LoginForm = (props) => {
 
     const { loading, handleLogin, fieldError } = props;
-
-    /**
-    * Has effect on init
-    */
-    useEffect(() => {
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
 
     return (
         <>
