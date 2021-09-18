@@ -1,4 +1,5 @@
-import { Spinner } from "react-bootstrap";  
+import { Spinner } from "react-bootstrap"; 
+import PropTypes from 'prop-types';
 
 /**
  * Show a loading spinner during during ongoing aynchronous operation
@@ -7,14 +8,20 @@ import { Spinner } from "react-bootstrap";
 
 const Loader = (props) => {
 
-    const { size } = props;
+    const { size, variant } = props;
     return (
         <>
-            <Spinner animation="border" role="status" size={size}>
+            <Spinner animation="border" role="status" size={size} variant={variant}>
                 <span className="visually-hidden">Loading...</span>
             </Spinner>
         </>
     );
 }
 
+Loader.propTypes = {
+    size: PropTypes.string.isRequired,
+    variant: PropTypes.string.isRequired
+};
+
 export default Loader;
+

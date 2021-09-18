@@ -4,3 +4,41 @@
    bottom: 0;
    width: 100%;
 }
+
+#device-container {
+   width: 600px;
+   height: 600px;
+   position: relative;
+}
+
+#center {
+   width: 10px;
+   height: 10px;
+   position: absolute;
+   left: 295px;
+   top: 295px;
+   background: #000;
+}
+
+.field {
+   width: 20px;
+   height: 20px;
+   position: absolute;
+   background: #f00;
+}
+
+#crosshair-x {
+   width: 600px;
+   height: 1px;
+   position: absolute;
+   left: 0;
+   top: 300px;
+}
+
+#crosshair-y {
+   width: 1px;
+   height: 600px;
+   position: absolute;
+   left: 300px;
+   top: 0;
+}

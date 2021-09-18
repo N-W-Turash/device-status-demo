@@ -1,5 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, Alert } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import Loader from "../../../../components/loader";
 import { validationSchema, initialFormValues } from "../../../../forms/login";
 
@@ -53,7 +54,7 @@ const LoginForm = (props) => {
                                 className="rounded-1 px-5 py-3"
                                 disabled={loading}
                             >
-                                {loading ? <Loader size="sm" /> : <small>LOG IN</small>}
+                                {loading ? <Loader size="sm" variant="light"/> : <small>LOG IN</small>}
                             </Button>
                         </div>
 
@@ -68,5 +69,11 @@ const LoginForm = (props) => {
         </>
     );
 }
+
+LoginForm.propTypes = {
+    loading: PropTypes.bool.isRequired,
+    handleLogin: PropTypes.func.isRequired,
+    fieldError: PropTypes.string.isRequired
+};
 
 export default LoginForm;
